@@ -1,0 +1,9 @@
+FROM python:3.9.6-slim
+
+COPY ./ /app
+
+RUN pip3 install /app  \
+       && apt-get update  \
+       && apt-get install -y openssh-client
+
+ENTRYPOINT [ "ssh-jhub-listener-start.sh" ]
