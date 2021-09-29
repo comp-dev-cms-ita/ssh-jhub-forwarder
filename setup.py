@@ -27,7 +27,12 @@ with open(pjoin(here, "README.md"), encoding="utf-8") as f:
 setup_args = dict(
     name="ssh-jhub-forwarder",
     packages=["ssh_jhub_forwarder"],
-    scripts=["scripts/ssh-jhub-forwarder.py","scripts/ssh-jhub-start.sh","scripts/ssh-jhub-listener.py", "scripts/ssh-jhub-listener-start.sh"],
+    scripts=[
+        "scripts/ssh-jhub-forwarder.py",
+        "scripts/ssh-jhub-start.sh",
+        "scripts/ssh-jhub-listener.py",
+        "scripts/ssh-jhub-listener-start.sh",
+    ],
     version=version_ns["__version__"],
     description="""SSH server to forward connection on remote cluster with JupyterHUB token authentication""",
     long_description=long_desc,
