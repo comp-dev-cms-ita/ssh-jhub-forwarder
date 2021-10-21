@@ -16,7 +16,7 @@ from .dbcache import (
 )
 
 
-class DaskSSHServer(asyncssh.SSHServer):
+class JHubSSHServer(asyncssh.SSHServer):
     def __init__(self, hub_url=None, *args, **kwargs):
         self.hub_url = hub_url
         self.router_name = None
@@ -94,7 +94,7 @@ class DaskSSHServer(asyncssh.SSHServer):
                     return False
 
 
-class DaskSSHListener(DaskSSHServer):
+class JHubSSHListener(JHubSSHServer):
     def __init__(self, hub_url=None, *args, **kwargs):
         super().__init__(hub_url=hub_url, *args, **kwargs)
 
