@@ -14,11 +14,10 @@ import os
 
 JHUB_URL = os.environ.get("JHUB_URL")
 
+
 async def start_server():
     await asyncssh.create_server(
-        partial(
-            JHubSSHListener, hub_url=JHUB_URL
-        ),
+        partial(JHubSSHListener, hub_url=JHUB_URL),
         "",
         8122,
         server_host_keys=["~/.ssh/id_rsa"],

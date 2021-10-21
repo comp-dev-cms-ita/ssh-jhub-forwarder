@@ -14,11 +14,10 @@ from functools import partial
 
 JHUB_URL = os.environ.get("JHUB_URL")
 
+
 async def start_server():
     await asyncssh.create_server(
-        partial(
-            JHubSSHServer, hub_url=JHUB_URL
-        ),
+        partial(JHubSSHServer, hub_url=JHUB_URL),
         "",
         8022,
         server_host_keys=["~/.ssh/id_rsa"],
