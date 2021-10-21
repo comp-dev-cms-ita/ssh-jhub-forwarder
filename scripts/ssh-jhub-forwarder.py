@@ -9,13 +9,15 @@ import asyncssh
 import asyncio
 import sys
 import time
+import os
 from functools import partial
 
+JHUB_URL = os.environ.get("JHUB_URL")
 
 async def start_server():
     await asyncssh.create_server(
         partial(
-            JHubSSHServer, hub_url="https://jhub.131.154.96.124.myip.cloud.infn.it"
+            JHubSSHServer, hub_url=JHUB_URL
         ),
         "",
         8022,
